@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/layout.astro';
 import Hero from '../components/Hero.astro';
+
+import { BASE_URL } from '../consts';
 ---
 
 <Layout title="Home">
 	<Hero title=`Jesse's Restoration`></Hero>
+	 { BASE_URL }
 	<h1> About us</h1>
 	<p>
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea dolore maiores consectetur quasi recusandae, porro cupiditate suscipit cumque enim quidem itaque accusamus? Culpa, delectus voluptas temporibus debitis vero tenetur.

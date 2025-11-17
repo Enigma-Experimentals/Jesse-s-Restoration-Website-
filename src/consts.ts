@@ -3,3 +3,4 @@
 
 export const SITE_TITLE = `Jesse's Restoration`;
 export const SITE_DESCRIPTION = `Jesse's Restoration Service`;
+export const BASE_URL =  import.meta.env.BASE_URL
