@@ -9,26 +9,33 @@ const { title, dynamicItem = "None"} = Astro.props;
 
 
 <div id="Hero-Container">
-    <div id="Hero-Title-Container">
-        <h2>{title}</h2>
-    </div>
     <div id="Hero-Background">
         <slot></slot>
+    </div>
+    <div id="Hero-Title-Container">
+        <h2>{title}</h2>
     </div>
 </div>
 
 
-<style>
+<style lang="less">
     #Hero-Container {
+        position: relative;
+
         width: 100%;
-        padding: 4rem 1rem;
         text-align: center;
+        height: 380px;
+        #Hero-Title-Container{
+            position: absolute;
 
-        height: 30vh;
-    }
-
-    #Hero-Container h2 {
-        margin: 0;
-        font-size: 2.5rem;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #Hero-Background{
+            position: absolute;
+        }
     }
 </style>
