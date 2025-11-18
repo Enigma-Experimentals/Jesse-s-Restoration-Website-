@@ -2,13 +2,52 @@
 import { SITE_TITLE } from '../../consts';
 import HeaderLink from './HeaderLink.astro';
 import { BASE_URL } from '../../consts';
+
+
+import { promises as fs } from 'fs';
+import * as path from 'path';
+
+interface ScanResult {
+    htmlFiles: string[];
+    folders: string[];
+}
+
+/**
+ * Scans a directory for HTML files and folders
+ * @param dirPath Path to the directory to scan
+ * @returns Object containing arrays of HTML files and folders
+ */
+async function scanDirectory(dirPath: string) {
+	let results = []
+
+	const items = await fs.readdir(dirPath);
+
+	for (const item of items) {
+		const fullPath = path.join(dirPath, item);
+		const stats = await fs.stat(fullPath);
+
+		if (stats.isDirectory()) {
+			results.push(item)
+		} else if (item.toLowerCase().endsWith('.astro')) {
+			results.push(item.split(".")[0])
+		}
+	}
+
+	return results;
+
+}
+let pages = await scanDirectory("./src/pages")
+console.log(pages)
+
+
 ---
 
 <header>
 	<nav>
 		<h2><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
-			<HeaderLink href=`${BASE_URL}`>Home</HeaderLink>
+			{pages}
+			<HeaderLink href=`${BASE_URL}`>a</HeaderLink>
 			<HeaderLink href=`${BASE_URL}/blog``>Blog</HeaderLink>
 			<HeaderLink href=`${BASE_URL}/about``>About</HeaderLink>
 		</div>
