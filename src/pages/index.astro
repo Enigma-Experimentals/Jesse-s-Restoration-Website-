@@ -6,10 +6,74 @@ import { BASE_URL } from '../consts';
 ---
 
 <Layout title="Home">
-	<Hero title=`Jesse's Restoration`></Hero>
-	 { BASE_URL }
-	<h1> About us</h1>
-	<p>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ea dolore maiores consectetur quasi recusandae, porro cupiditate suscipit cumque enim quidem itaque accusamus? Culpa, delectus voluptas temporibus debitis vero tenetur.
-	</p>
+	<Hero title=`Jesse's Restoration`>
+		<div class="hero">
+			<div class="hero-content">
+			</div>
+		</div>
+	</Hero>
+	
+	<article>
+        <h1>About us</h1>
+        <p>A few years ago, I found myself buried under a mountain of “junk” old furniture, broken appliances, and forgotten treasures gathering dust in my garage. At first, I saw it all as clutter, a burden that weighed me down. But one day, I realized something powerful: what I considered junk was actually a treasure trove of opportunity.</p>
+        <hr>
+        <p>Every broken chair, every unused box, held the potential for renewal. I started fixing, repurposing, and giving new life to what others had discarded. That pile of junk became my inspiration, my challenge, and ultimately, my gift to others. I transformed what seemed useless into beautiful, functional pieces that brought joy and purpose.</p>
+        <p>This experience taught me that junk isn't just trash it's a chance to create, to give, and to make a difference. When you donate your unwanted items to me, you’re not just clearing space you’re opening the door to new opportunities, to someone who can breathe new life into what you no longer need.</p>
+        <hr>
+        <p>So I ask you: What if your junk could be someone else's hope? What if your clutter could spark a new beginning for someone in need?</p>
+        <h2>Donate</h2>
+        <p>Would you consider donating your unwanted items to me? Together, we can turn junk into opportunity and make a real difference.</p>
+    </article>
 </Layout>
+
+<style>
+.hero {
+    height: 100%; /* Takes full viewport height */
+	width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Base image layer */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('your-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay with fade effect */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.2)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+    
+    /* Center content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+</style>

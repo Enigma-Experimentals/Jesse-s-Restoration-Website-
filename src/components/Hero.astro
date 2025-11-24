@@ -19,12 +19,15 @@ const { title, dynamicItem = "None"} = Astro.props;
 
 
 <style lang="less">
+
     #Hero-Container {
         position: relative;
 
         width: 100%;
         text-align: center;
         height: 380px;
+
+        overflow: hidden;
         #Hero-Title-Container{
             position: absolute;
 
@@ -36,6 +39,8 @@ const { title, dynamicItem = "None"} = Astro.props;
         }
         #Hero-Background{
             position: absolute;
+            width: 100%;
+            height: 100%;
         }
     }
 </style>

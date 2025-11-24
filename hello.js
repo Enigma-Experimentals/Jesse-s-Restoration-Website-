@@ -1,0 +1,1 @@
+console.log('Hello World! Claude Code is working.');
